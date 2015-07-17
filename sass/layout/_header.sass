@@ -1,0 +1,113 @@
+//== Header & Navigation == //
+// Company logo ~ image replacemenet technique borrowed form
+// https://css-tricks.com/css-image-replacement/ technique #4
+h1.logo
+    background: url("../images/company-logo.jpg") no-repeat
+    float: left
+    font-size: 0
+    height: 32px
+    margin-left: 15px
+    margin-top: 18px
+    width: 272px
+    +breakpoint(desktop)
+        margin-top: 12px
+        margin-left: 0px
+
+// navigation for mobile
+.nav-mobile-hamburger
+    font-size: 28px
+    margin-top: 0
+    padding: 20px
+    cursor: pointer
+    // switch between open and close icons
+    .close-mb-menu
+        display: none
+        .js-mobile &
+            display: block
+    .open-mb-menu
+        display: block
+        .js-mobile &
+            display: none
+    a, span
+        color: white !important
+        text-decoration: none
+    +breakpoint(tablet)
+        display: none
+
+.container, .hd-animate
+    transform: translate3d(0, 0, 0)
+    transition: all 0.2s ease-in
+    .js-mobile &
+        transform: translate3d(-48%, 0, 0)
+        transition: all 0.2s ease-in
+
+ul.nav.navbar-nav
+    cursor: pointer
+    left: 106%
+    margin: -1px 0 0 0
+    position: absolute
+    transform: translate3d(0%, 0, 0)
+    transition: all 0.2s ease-in
+    width: 100%
+    z-index: 99999
+    // clicked on the menu
+    .js-mobile &
+        left: 98%
+        background-color: $color-violette
+        transition: all 0.2s ease-in
+        transform: translate3d(-46%, 0, 0)
+    @include breakpoint(tablet)
+        position: static
+        float: right !important
+        display: block
+        width: auto
+    li
+        border-left: 1px solid #5E6075
+        // Remove last border- nt-child not supported in ie8 but that's ok ;)
+        &:last-child
+            border-right: none
+    a
+        padding: auto 0
+        color: white
+        font-size: 12px
+        text-shadow: 1px 1px 0px $color-coal
+.header-bar
+    background-color: $color-violette
+    // these 3 proprieties will make the header scroll fixed on mobile
+    // avoiding making the user scroll up the switch between categories
+    position: fixed
+    width: 100%
+    transition: all 0.2s ease-in
+    z-index: 9999
+    +breakpoint(tablet)
+        position: static
+.header
+    margin: 0 auto
+    width: 100%
+    max-width: 980px
+    // reset the background with a higher specificity
+    ul li a
+        border-bottom: 5px solid $color-blue-lavenda
+        &:hover
+            background-color: #B1B4C7
+    a.buy
+        border-color: $color-primary
+        &:active, &:hover, &.active
+            color: white
+            background-color: $color-primary !important
+    a.rent
+        border-color: $color-blue
+        &:active, &:hover, &.active
+            color: white
+            background-color: $color-blue !important
+    a.commercial
+        border-color: $color-royal-green
+        &:active, &:hover, &.active
+            color: white
+            background-color: $color-royal-green !important
+
+// When focusing the input fields on mobile slide the header up to
+// leave more space to user to see the ui
+.js-hide-header
+    transform: translate3d(0, -75px, 0)
+    transition: all 0.2s ease-in

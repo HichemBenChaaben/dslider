@@ -1,0 +1,157 @@
+// == Sidebar coponent == //
+.sidebar
+    padding: 0
+    margin-top: 15px
+    +breakpoint(desktop)
+        padding: 0 15px
+        margin-top: 0
+
+    .section
+        margin-top: 0
+        +breakpoint(desktop)
+            margin-top: 15px
+
+.contact-box
+    display: block
+    font-size: 16px
+    width: 100%
+    background-color: $color-primary
+    border: 5px solid $color-primary
+    .btn-send-message
+        background-color: #4A4C61
+        color: white
+        padding: 0
+        border: none
+        padding: 5px
+    // override bootstrap classes
+    .input-group
+        padding: 5px 0
+        width: 100%
+
+    // Colors changing with the body class
+    .rent &
+        background-color: $color-blue
+        border: 5px solid white
+
+    .commerical &
+        background-color: $color-royal-green
+        border: 5px solid white
+
+    ul.contact-actions
+        color: white
+        margin: 0
+        padding: 5px
+        li
+            list-style-type: none
+            color: white
+            &:hover, &:active
+                box-shadow: inset 0px 0px 34px -4px rgba(69,69,69,0.3)
+
+            // borders changing with the body class
+            // Border by default
+            border-bottom: 1px solid $color-watermelon
+            .rent &
+                border-bottom: 1px solid $color-blue-navy
+            .contact-box-btn
+                margin-left: 20px
+            div
+                text-align: center
+                background-color: white
+                color: $color-cloud
+
+                input
+                    display: block
+                // phone number
+                .phone-nb
+                    .buy &
+                        color: $color-primary
+                    .rent &
+                        color: $color-blue
+                // contact by email
+                .contact-form
+                    input
+                        display: block
+                // make an offer
+                .make-offer-form
+                    label, .label-offer
+                        display: block
+                        text-align: left // or can be a variable for ltr/ rtl
+                        color: #626262
+                        font-size: 11px
+
+        a
+            color: white
+            display: block
+            text-decoration: none
+            padding: 15px
+            border-bottom: white
+
+    form
+        background-color: white
+        padding: 5px
+
+// === mpu === //
+.mpu
+    display: none
+    img
+        width: 100%
+    +breakpoint(tablet)
+        display: block
+
+// == User share ~ sidebar ==//
+.user-share
+    font-size: 16px
+    ul.user-share-actions
+        list-style: none
+        margin: 0
+        padding: 0
+        li
+            padding: 0
+            .user-share-btn
+                margin-left: 20px
+            a
+                padding: 14px
+                text-decoration: none
+                display: block
+                white-space: nowrap
+                color: $color-blue-typo
+                background-color: transparent
+                transition: background-color 0.2s ease-in
+                &:hover
+                    color: #626262
+                    background-color: $color-cloud
+                    transition: background-color 0.2s ease-in
+// == Market live ===//
+.market-live
+    h4
+        color: $color-blue-typo
+        font-weight: 200
+    a.btn.btn-read-more
+        background-color: $color-primary
+        color: white
+        border-radius: 0
+        .rent &
+            background-color: $color-blue
+    ul
+        margin: 0
+        padding: 0
+
+        li.m-live
+            padding: 14px 0
+            list-style: none
+            border-bottom: 1px solid $color-cloud
+            &:first-child
+                padding-top: 0
+            &:last-child
+                margin-bottom: 15px
+            a
+                text-decoration: none
+                color: $color-blue-typo
+                h5
+                    color: $color-primary
+                    margin: 0
+                    .rent &
+                        color: $color-blue
+
+                p
+                    margin: 0

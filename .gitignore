@@ -1,0 +1,11 @@
+# Ignored node modules
+node_modules/
+bower_components/
+
+# SASS cache files
+.sass-cache/
+
+# Ignore css map files
+public/assets/css/**/*.map
+*.css.map
+

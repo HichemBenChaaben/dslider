@@ -1,0 +1,27 @@
+// project namespace for the sake of sandboxing / limiting specificity
+// example  pf-galery --> this code  ~  gallery --> the legacy code / the vendor
+$ns: 'u-'
+
+// flag for supporting ie8 ~ so you will kill easily features non supported
+// instead of letting them hanging which what can happen most of the times
+$ie8-supported: false
+
+// Importing all the mixins / components / helpers ect...
+@import mixins/breakpoint
+
+// general rules
+@import helpers
+
+// color palette and others
+@import vars
+
+// Components ~ single repetitve modules
+@import components
+
+// Import the grid layout
+@import mixins/_grid
+
+// layout broken in sections representing unique components
+@import layout
+
+

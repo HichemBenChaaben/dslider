@@ -1,0 +1,36 @@
+/**
+ *  Media queries genetor by Hichem ben chaaben
+ *  https://gist.github.com/HichemBenChaaben/152984beda7a1d902a54
+ *  Creates a mixin for managing breakpoints with one of the
+ *  most commonly used breakppoints according to http://mydevice.io/devices/
+ *  Params:   {mobile}, {notebook}, {tablet}, {desktop}
+ *  Usage:    +breakpoint(tablet)
+ *                .some-class
+ *                    float: left
+ */
+
+$desktop-min-width: 1020px
+$tablet-max-width: $desktop-min-width - 1
+$tablet-min-width: 760px
+$mobile-max-width: $tablet-min-width - 1
+$mobile-min-width: 0px
+
+@mixin breakpoint($viewport)
+    @if $viewport == desktop
+        @media (min-width: $desktop-min-width)
+            @content
+    @else if $viewport == tablet
+        @media (min-width: $tablet-min-width)
+            @content
+    @else if $viewport == tablet-only
+        @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width)
+            @content
+    @else if $viewport == notebook
+        @media (min-width: 480px) and (max-width: $mobile-max-width)
+            @content
+    @else if $viewport == mobile
+        @media (max-width: $mobile-max-width)
+            @content
+    @else
+        @media (min-width: $viewport)
+            @content

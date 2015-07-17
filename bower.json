@@ -1,0 +1,25 @@
+{
+  "name": "pf-screening",
+  "version": "0.0.0",
+  "authors": [
+    "HichemBenChaaben <napsterisamm@hotmail.fr>"
+  ],
+  "description": "Property finder screening test",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.2",
+    "html5-placeholder-polyfill": "~2.0.10",
+    "jquery": "~2.1.4"
+  },
+  "preen": {
+    "jquery": "bower_components/jquery/dist/jquery.min.js"
+  }
+}

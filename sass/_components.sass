@@ -1,0 +1,93 @@
+// == Meta labels == //
+// ~ styling the page card - meta-labels
+dl.listing-meta-label
+    border-left: 0
+    border-right: 0
+    border-top: 1px solid #dcdcdc
+    display: inline-block
+    margin: 0 0 0 -5px
+    padding: 15px
+    position: relative
+    width: 50%
+    +breakpoint(tablet)
+        width: 25%
+    dt.listing-lbl
+        font-weight: 300
+    dd.listing-val
+        font-weight: bold
+
+// === FORMS === //
+form
+    label
+        // overrides
+        width: 100%
+        font-weight: normal
+        margin-bottom: 0
+
+    input, textarea
+        // twbs override
+        border-radius: 0 !important
+        // this will allow adding a '*' next to a required field
+        padding-left: 14px
+    input.field-required::before
+        color: $color-primary
+        content: "*"
+        font-size: 25px
+        left: 8px
+        position: absolute
+        top: 21px
+    input[required="required"], textarea[required="required"]
+        &:after
+            color: $color-primary
+            content: "*"
+            font-size: 25px
+            left: 8px
+            position: absolute
+            top: 21px
+
+    // required fields
+    label.js-error
+        float: left
+        display: block
+        width: 100%
+        border: 1px solid $color-primary
+        background-color: $color-magenta-light
+        font-size: 12px
+        input, textarea
+            border: none
+            margin-bottom: 5px !important
+
+    span.js-error-required, span.js-error-format, .js-error-minlength
+        float: left
+        color: $color-primary
+        margin: 5px
+        text-align: left
+        display: none
+        // ~ this can avoid adding * to all fields or bloat translations for example
+        &:before
+            content: '*'
+        &input, &textarea
+            margin-top: 5px
+    // Char counter for elements that have maxlength
+    span.js-char-counter
+        background: #FFF
+        color: #6c6c6c
+        font-size: 14px
+        font-weight: 500
+        position: absolute
+        right: 10px
+        top: 10px
+        z-index: 19
+    // Color of the charcounter on exceess
+    span.js-char-counter-max
+        color: $color-primary
+
+label.js-required
+    &:before
+        color: $color-primary
+        content: "*"
+        font-size: 24px
+        left: 4px
+        position: absolute
+        top: 10px
+        z-index: 12

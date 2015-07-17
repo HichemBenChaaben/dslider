@@ -1,0 +1,34 @@
+@import vars
+//== Helpers ==//
+.nodisplay
+    display: none
+
+.no-display-desktop
+    display: block
+    +breakpoint(desktop)
+        display: none
+
+.clearfix
+    &:after
+        visibility: hidden
+        display: block
+        font-size: 0
+        content: " "
+        clear: both
+
+// Force overriding the border
+.noborder
+    border: none !important
+
+// Padding free .nopaddings--i have !important flag
+.nopadding
+    padding: 0
+    &--i
+        padding: 0 !important
+
+// Margin free ~ .nomargins--i have !important flag
+.nomargins
+    margin: 0
+    &--i
+        margin: 0 !important
+

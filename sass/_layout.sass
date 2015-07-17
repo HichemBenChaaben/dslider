@@ -1,0 +1,78 @@
+@import layout/base
+@import layout/header
+@import layout/sidebar
+@import layout/content
+
+// Cards ~ or blocks
+.card
+    color: $color-blue-typo
+    font-weight: 300
+    padding: 15px
+    display: block
+    background-color: white
+    box-shadow: 0px 0px 16px -1px rgba(209,205,209,1)
+    // Gracefully degrade to something more or less ~ ok
+    .ie9 &
+        border: 1px solid #D1CDD1
+
+// == Generic == //
+.price, .ref-number
+    .buy &
+        color: $color-primary
+    .rent &
+        color: $color-blue
+    .commercial &
+        color: $color-royal-green
+.detail
+    margin-right: 15px
+
+// Display a message to update the browser browsehappy for old browsers
+.browsehappy
+    display: block
+    text-align: center
+    background-color: $color-warning
+    padding: 10px
+    margin: 0
+
+// 1-5 colums based
+ul.cols-1-5
+    margin-left: 0
+    list-style: none
+    padding: 0
+    margin: 0
+    li.prop-card
+        zoom: 1
+        box-sizing: border-box
+        float: left
+        margin-bottom: 20px
+        margin-right: 2%
+        width: 48%
+        +breakpoint(tablet)
+            margin-right: 3%
+            width: 17.6%
+        &:last-child
+            margin-left: 0
+            margin-right: 0
+        .card
+            padding: 0
+        h3
+            margin: 0
+        img
+            width: 100%
+        a.similar-prop
+            color: $color-blue-typo
+            text-align: center
+            text-decoration: none
+            .similar-prop-address
+                border-bottom: 1px solid $color-blue-typo
+                font-size: 14px
+                margin: 0 8px
+                padding: 15px
+                padding-bottom: 4px
+                text-align: left
+            .price
+                padding: 15px 0
+                font-size: 14px !important
+                font-weight: normal
+                .price-amount
+                    font-weight: bold

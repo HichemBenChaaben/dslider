@@ -1,5 +1,7 @@
 # Deamon slider
 
+<img src="http://goo.gl/2Qu0FM"/>
+
 A Blazin' fast slider boilerplate jquery tiny little plugin build with minimal jquery and css.
 
 Features
